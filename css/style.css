@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 1em 0 3em;
+  font-family: Lato;
+  background-color: #eeffff;
+  font-size: 1em;
+}
+header h1 {
+  text-align: center;
+}
+main {
+  padding: 1em;
+}
+fieldset {
+  padding: 1em 1em 2em;
+}
+legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.input-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+label {
+  font-size: 1.2em;
+  width: 25%;
+}
+.form-elements {
+  width: 100%;
+}
+textarea {
+  font-size: 1.1em;
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 1em;
+}
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1em;
+}
+.buttons button {
+  padding: 15px 20px;
+  border: none;
+  background-color: aqua;
+  color: #001010;
+  border-radius: 5px;
+  /* font-size: 1.2em; */
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.buttons button:hover {
+  background-color: #001010;
+  color: #eeffff;
+}
+.result-section {
+  text-align: center;
+  background-color: #001010;
+  color: #eeffff;
+  padding: 2em 1em;
+}
+.result-section h3 {
+  padding: 0.5em 1em;
+  background-color: #eeffff;
+  color: #008080;
+  display: inline-block;
+}
+
+.result-section p {
+  background-color: #008080;
+  text-align: left;
+  word-wrap: break-word;
+  padding: 5px;
+}

@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Simple Text Manipulator</h1>
+  </header>
+  <main>
+    <section class="input-section">
+      <fieldset>
+        <legend>Input Section</legend>
+        <div class="input-container">
+          <label for="textInput">Type in your text here:</label>
+          <div class="form-elements">
+            <textarea name="" id="textInput" cols="30" rows="10"></textarea>
+            <div class="buttons">
+              <button id="toUpper">Uppercase</button>
+              <button id="toLower">Lowercase</button>
+              <button id="toCap">Capitalize Each Word</button>
+              <button id="capFirstLet">Capitalize Only First Letter</button>
+              <button id="randomCap">Randomize case</button>
+              <button id="camelCase">camelCase</button>
+            </div>
+          </div>
+        </div>        
+      </fieldset>
+    </section>
+    <section class="result-section">
+      <h3>Result</h3>
+      <p id="resultOutput"></p>
+    </section>
+
+  </main>
+</body>
+</html>

@@ -18,7 +18,11 @@
         <div class="input-container">
           <label for="textInput">Type in your text here:</label>
           <div class="form-elements">
-            <textarea name="" id="textInput" cols="30" rows="10"></textarea>
+            <textarea name="" id="textInput" rows="5">Hello world.</textarea>
+            <div>
+              <label for="resultOutput">Result</label>
+              <textarea name="" id="resultOutput" rows="5" readonly>Hello world.</textarea>
+            </div>
             <div class="buttons">
               <button id="toUpper">Uppercase</button>
               <button id="toLower">Lowercase</button>
@@ -30,10 +34,6 @@
           </div>
         </div>        
       </fieldset>
-    </section>
-    <section class="result-section">
-      <h3>Result</h3>
-      <p id="resultOutput"></p>
     </section>
 
   </main>

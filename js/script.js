@@ -8,79 +8,73 @@ let resultOutput = document.getElementById("resultOutput");
 let randomCapBtn = document.getElementById("randomCap");
 let camelCaseBtn = document.getElementById("camelCase");
 
-let testText = "lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.";
-
 // Function to get text
-function getText() {
+function showResult(result) {
   resultOutput.style.textTransform = "inherit";
-  text = textInput.value;
+  resultOutput.value = result;
+  resultOutput.focus();
+  resultOutput.select();
 }
 
 // Text to uppercase function
 function changeToUpper() {
-  getText();
-  let result = text.toUpperCase();
-  resultOutput.innerHTML = result;
+  showResult(textInput.value.toUpperCase());
 }
 
 // Text to lowercase function
 function changeToLower() {
-  getText();
-  let result = text.toLowerCase();
-  resultOutput.innerHTML = result;
+  showResult(textInput.value.toLowerCase());
 }
 
 // Capitalize text function
 function capitalizeText() {
-  getText();
-  resultOutput.innerHTML = text;
+  showResult(textInput.value);
   resultOutput.style.textTransform = "capitalize";
 }
 
 // Capitalize first letter function
 function capitalizeFirstLtr() {
-  getText();
-  let validChar = /[a-z1-9]/;
+  let text = textInput.value;
+  let validChar = /[a-zA-Z]/;
   let charPos = text.search(validChar);
   let firstChar = text.charAt(charPos);
   text = text.replace(firstChar, firstChar.toUpperCase());
-  resultOutput.innerHTML = text;
+  showResult(text);
 }
 
 // Randomcade function
 function toRandomCase() {
-  getText();
-  let words = text.split(" ");
-  randomizedWords = words.map(word => {
-    let charArray = word.split("");
-    let randomizedChars = charArray.map(char => {
+  let text = textInput.value;
+  const words = text.split(" ");
+  const randomizedWords = words.map(word => {
+    const charArray = word.split("");
+    const randomizedChars = charArray.map(char => {
       let random = Math.random();
       return random < 0.5 ? char.toUpperCase() : char.toLowerCase();
     });
     let newWord = randomizedChars.join("");
     return newWord;
   });
-  let newText = randomizedWords.join(" ");
-  resultOutput.innerHTML = newText;
+  text = randomizedWords.join(" ");
+  showResult(text);
 }
 
 // Camelcase funtion
 function toCamelCase() {
-  getText();
-  let words = text.split(" ");
-  modWords = words.map(word => {
-    if (word !== words[0]) {
-      word = word.toLowerCase();
-      let firstChar = word.charAt(0);
-      let modFirstChar = firstChar.toUpperCase();
-      modWord = word.replace(firstChar, modFirstChar);
-      return modWord;
-    } else {
-      return word;
+  let text = textInput.value;
+  const words = text.split(" ");
+  const modWords = words.map((word, i) => {
+    word = word.toLowerCase();
+    let validChar = /[a-z]/i;
+    let firstChar = word.charAt(word.search(validChar));
+    console.log(word.search(validChar));
+    if (i !== 0) {
+      word = word.replace(firstChar, firstChar.toUpperCase());
     }
+    return word;
   });
-  let newText = modWords.join("");
-  resultOutput.innerHTML = newText;
+  text = modWords.join("");
+  showResult(text);
 }
 
 toUpperBtn.addEventListener("click", changeToUpper);
